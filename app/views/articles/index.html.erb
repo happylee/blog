@@ -28,7 +28,7 @@
           <p>
           <%= link_to 'ReadMore', article %> <span>&bull;</span>
           Comments (<%= article.comments.count%>) <span>&bull;</span> 
-          <%= article.created_at.mday %> of <%= I18n.t("date.abbr_month_names")[article.created_at.month] %>, <%= article.created_at.year %>
+          <%=time_ago_in_words(article.created_at)%> ago
           </p>
         </article>          
        <% end %>
