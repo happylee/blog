@@ -10,7 +10,7 @@
     <div class="menu">
       <ul>
          <li><%= link_to 'Home', articles_path %></li>
-        <li><a href="#">About</a></li>
+       
       </ul>
     </div>
   </nav>
@@ -26,9 +26,10 @@
         <article>
           <h2><%= article.title %></h2>
           <p><%= article.text %></p>
-          <div><%= link_to 'Show', article %></div>
-          <div><%= link_to 'Edit', edit_article_path(article) %></div>
-          <div><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <p>
+          <%= link_to 'ReadMore', article %> <span>&bull;</span>
+          Comments (<%= article.comments.count%>)
+          </p>
         </article>          
        <% end %>
                       
@@ -36,6 +37,7 @@
 
     <aside id="sidebar">
           <h3><%= link_to 'New Article', new_article_path %></h3>
+           there are <%=@articles.count%> articles in total.  Please post more!
 
       </aside>
 
