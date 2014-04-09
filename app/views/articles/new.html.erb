@@ -1,5 +1,43 @@
-<h1>New article</h1>
 
-<%= render 'form' %>
+<head>
+  <title>MyBlog</title>
+</head>
+<body>
 
-<%= link_to 'Back', articles_path %>
+<div id="wrapper"><!-- #wrapper -->
+
+  <nav><!-- top nav -->
+    <div class="menu">
+      <ul>
+        <li><%= link_to 'Home', articles_path %></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav><!-- end of top nav -->
+  
+  <header><!-- header -->
+    <h1><a href="#">RailBlog</a></h1>
+    <h2>Li Sui 08512949</h2>
+  </header><!-- end of header -->
+  
+  <section id="main"><!-- #main content and sidebar area -->
+      <section id="content"><!-- #content -->
+                
+       <%= render 'form' %>
+                      
+      </section><!-- end of #content -->
+      <aside id="sidebar"><!-- sidebar -->
+          <h3><%= link_to 'New Article', new_article_path %></h3>
+      </aside>
+
+  </section><!-- end of #main content and sidebar-->
+  
+  <footer id="footer-area">159.707 Assignment1 </footer>
+  
+</div><!-- #wrapper -->
+
+</body>
+
+
+
+

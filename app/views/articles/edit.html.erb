@@ -1,6 +1,39 @@
-<h1>Editing article</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+<head>
+  <title>MyBlog</title>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <nav>
+    <div class="menu">
+      <ul>
+         <li><%= link_to 'Home', articles_path %></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header>
+    <h1><a href="#">RailBlog</a></h1>
+    <h2>Li Sui 08512949</h2>
+  </header>
+  
+  <section id="main">
+      <section id="content">
+      	<%= render 'form' %>             
+      </section>
+          
+
+    <aside id="sidebar">
+          <h3><%= link_to 'New Article', new_article_path %></h3>
+
+    </aside>
+
+  </section>
+  
+  <footer id="footer-area">159.707 Assignment1 </footer>
+
+</body>

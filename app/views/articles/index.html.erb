@@ -1,29 +1,48 @@
-<h1>Listing articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<head>
+  <title>MyBlog</title>
+</head>
+<body>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="wrapper">
 
-<br>
+  <nav>
+    <div class="menu">
+      <ul>
+         <li><%= link_to 'Home', articles_path %></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header>
+    <h1><a href="#">RailBlog</a></h1>
+    <h2>Li Sui 08512949</h2>
+  </header>
+  
+  <section id="main">
+      <section id="content">
+      <% @articles.each do |article| %>
+        <article>
+          <h2><%= article.title %></h2>
+          <p><%= article.text %></p>
+          <div><%= link_to 'Show', article %></div>
+          <div><%= link_to 'Edit', edit_article_path(article) %></div>
+          <div><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        </article>          
+       <% end %>
+                      
+      </section>
 
-<%= link_to 'New Article', new_article_path %>
+    <aside id="sidebar">
+          <h3><%= link_to 'New Article', new_article_path %></h3>
+
+      </aside>
+
+  </section>
+  
+  <footer id="footer-area">159.707 Assignment1 </footer>
+  
+</div>
+
+</body>

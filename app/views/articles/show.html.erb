@@ -1,43 +1,74 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<head>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
- <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-<% end %>
- 
-<h2>Add a comment:</h2>
-<%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <title>MyBlog</title>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <nav>
+    <div class="menu">
+      <ul>
+        <li><%= link_to 'Home', articles_path %></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header>
+    <h1><a href="#">RailBlog</a></h1>
+    <h2>Li Sui 08512949</h2>
+  </header>
+  
+  <section id="main">
+      <section id="content">
+        <article>
+          <h2><%= @article.title %></h2>
+          <p> <%= @article.text %></p>
+        </article>
+        <h2>Comments</h2>
+          <% @article.comments.each do |comment| %>
+            <p>
+              <strong>Commenter:</strong>
+              <%= comment.commenter %>
+            </p>
+           
+            <p>
+              <strong>Comment:</strong>
+              <%= comment.body %>
+            </p>
+           <%= link_to 'Destroy Comment', [comment.article, comment],
+                         method: :delete,
+                         data: { confirm: 'Are you sure?' } %>
+          <% end %>
+           
+          <h2>Add a comment:</h2>
+          <%= form_for([@article, @article.comments.build]) do |f| %>
+            <p>
+              <%= f.label :commenter %><br>
+              <%= f.text_field :commenter %>
+            </p>
+            <p>
+              <%= f.label :body %><br>
+              <%= f.text_area :body %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+          <% end %>
+      </section>
+
+    <aside id="sidebar">
+          <h3><%= link_to 'New Article', new_article_path %></h3>
+          <h4><%= link_to 'Edit', edit_article_path(@article) %></h4>
+      </aside>
+
+  </section>
+  
+  <footer id="footer-area">159.707 Assignment1 </footer>
+  
+</div>
+
+</body>
+
