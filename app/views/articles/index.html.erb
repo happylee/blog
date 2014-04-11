@@ -1,4 +1,4 @@
-<head>
+<!--<head>
   <title>MyBlog</title>
 </head>
 <body>
@@ -52,4 +52,36 @@
   
 </div>
 
+</body>-->
+
+
+
+
+<body>
+<div id="wrapper">
+
+  <nav>
+    <div class="menu">
+      <ul>
+         <li><a href="#/index">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header>
+    <h1><a href="#/index">RailBlog</a></h1>
+    <h2>Li Sui 08512949</h2>
+  </header>
+<section id="main"></section>
+
+<script type="text/javascript">
+  $(function() {
+  // Blog is the app name
+  window.router = new Blog.Routers.ArticlesRouter({articles: <%= @articles.to_json.html_safe -%>});
+  Backbone.history.start();
+  });
+</script>
+<footer id="footer-area">159.707 Assignment1 </footer>
+  
+</div>
 </body>
