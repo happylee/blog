@@ -150,11 +150,6 @@ color: #333;
 }
 
 /** ARTICLES **/
-article img {
-border: none;
--webkit-box-shadow: 3px 3px 7px #777;
--moz-box-shadow: 3px 3px 7px #777;
-}
 
 #content p, ul, ol, hr {
 margin-bottom: 24px;
@@ -170,6 +165,7 @@ margin: 0 0 20px 0;
 line-height: 1.5em;
 }
 
+
 .alignleft, img.alignleft {
 display: inline;
 float: left;
@@ -180,13 +176,6 @@ margin-right: 10px;
 display: inline;
 float: right;
 margin-left: 10px;
-}
-
-.aligncenter, img.aligncenter {
-clear: both;
-display: block;
-margin-left: auto;
-margin-right: auto;
 }
 
 /* sidebar and footer widget blocks */
