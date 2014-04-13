@@ -11,10 +11,12 @@ class Blog.Views.Articles.IndexView extends Backbone.View
 
   addOne: (article) =>
     view = new Blog.Views.Articles.ArticleView({model : article})
+    console.log article
     @$("article").append(view.render().el)
 
   render: =>
     $(@el).html(@template(articles: @options.articles.toJSON() ))
     @addAll()
+    
 
     return this

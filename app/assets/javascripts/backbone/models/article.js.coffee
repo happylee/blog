@@ -5,6 +5,7 @@ class Blog.Models.Article extends Backbone.Model
     title: null
     text: null
 
+
 class Blog.Collections.ArticlesCollection extends Backbone.Collection
   model: Blog.Models.Article
   url: '/articles'
