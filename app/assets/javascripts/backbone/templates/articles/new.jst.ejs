@@ -1,15 +1,14 @@
 
 <section id="content"> 
-<form id="edit-article" name="article">
+<form id="new-article" name="article">
+  	<div><label for="title"> title:</label></div>
+    <input type="text" name="title" id="title" value="<%= title %>" >
 
-      <div><label for="title"> title</label></div>
-      <input type="text" name="title" id="title" value="<%= title %>" >
-  
-
-      <div><label for="text"> text</label></div>
-      <textarea rows="10" cols="50" name="text" ><%=text%></textarea>
-      <div>
-      <input type="submit" value="confirm" />
-      </div>
- </form>           
+  	<div><label for="text"> text:</label> </div>
+    <textarea rows="10" cols="50" name="text" id="text" value="<%= text %>" ></textarea>
+ 
+  <div>
+    <input type="submit" value="Create Article" />
+  </div>
+</form>
 </section>
